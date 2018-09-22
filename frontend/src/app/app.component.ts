@@ -7,7 +7,7 @@ import {Http} from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Vamos hacer cambios para el puerto 4300';
+  title = 'Mostrando productos obtenidos desde el product-service';
   listOfProducts: string[] = [];
 
   constructor(private http: Http) { }
