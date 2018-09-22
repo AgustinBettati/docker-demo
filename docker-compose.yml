@@ -2,18 +2,14 @@ version: '3'
 
 services:
 
-  backend:
-    build: ./backend
-    volumes:
-      - ./backend:/usr/src/app
-    ports:
-      - 5001:8080
-
   frontend:
-    image: php:apache
-    volumes:
-      - ./frontend:/var/www/html
+    build: ./frontend
     ports:
-      - 5000:80
-    depends_on:
-      - backend
+      - 4200:4200
+    links:
+      - products-service
+
+  products-service:
+    build: ./backend
+    ports:
+      - 9000:8080
