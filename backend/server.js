@@ -15,5 +15,10 @@ app.get('/product', (req, res) => {
   res.send(["Tele", "Celular", "Auriculares"]);
 });
 
+app.get('/crash', (req, res) => {
+  process.exit();
+  res.send();
+});
+
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
