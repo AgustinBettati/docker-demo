@@ -14,10 +14,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.001'
+        # percentage of cpu
+          cpus: '0.5' 
           memory: 50M
         reservations:
-          cpus: '0.0001'
+          cpus: '0.25'
           memory: 20M
     ports:
       - 9000:8080
